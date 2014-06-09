@@ -2,7 +2,8 @@
   "name": "grammarjs-smiles",
   "version": "0.0.1",
   "main": "./index.js",
-  "keywords": ["grammar", "chemistry", "smiles", "parser"],
+  "description": "The Simplified Molecular-Input Line-Entry System or SMILES is a specification in form of a line notation for describing the structure of chemical molecules using short ASCII strings.",
+  "keywords": ["grammar", "chemistry", "smiles", "opensmiles"],
   "dependencies": {
     "grammarjs-grammar": "*",
     "grammarjs-token": "*",

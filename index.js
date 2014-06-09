@@ -51,6 +51,29 @@ rule('atom')
   .match('*', value);
 
 /**
+ * Branch atoms.
+ */
+
+rule('atom.branched')
+  .match(':atom', ':bond.ring*', ':branch*', passthrough);
+
+/**
+ * Bracket atoms.
+ */
+
+rule('atom.bracket')
+  .match(
+    ':punctuation.bracket.square.begin',
+    ':isotope?',
+    ':symbol',
+    ':chiral?',
+    ':hcount?',
+    ':charge?',
+    ':class?',
+    ':punctuation.bracket.square.end',
+    passthrough);
+
+/**
  * Aliphatic organic compound.
  */
 
@@ -79,22 +102,6 @@ rule('organic.aromatic')
   .match('p', value);
 
 /**
- * Bracket atoms.
- */
-
-rule('atom.bracket')
-  .match(
-    ':punctuation.bracket.square.begin',
-    ':isotope?',
-    ':symbol',
-    ':chiral?',
-    ':hcount?',
-    ':charge?',
-    ':class?',
-    ':punctuation.bracket.square.end',
-    passthrough);
-
-/**
  * Symbol.
  */
 
@@ -102,13 +109,6 @@ rule('symbol')
   .match(':symbol.element', passthrough)
   .match(':symbol.aromatic', passthrough)
   .match('*', value);
-
-/**
- * Isotope.
- */
-
-rule('isotope')
-  .match(/\d+/, value);
 
 /**
  * Periodic table of elements.
@@ -241,6 +241,13 @@ rule('symbol.aromatic')
   .match('as', value);
 
 /**
+ * Isotope.
+ */
+
+rule('isotope')
+  .match(/\d+/, value);
+
+/**
  * Chiral.
  */
 
@@ -303,13 +310,6 @@ rule('bond')
 rule('bond.ring')
   .match(':bond?', ':literal.digit', passthrough)
   .match(':bond?', '%', ':literal.digit', ':literal.digit', passthrough);
-
-/**
- * Branch atoms.
- */
-
-rule('atom.branched')
-  .match(':atom', ':bond.ring*', ':branch*', passthrough);
 
 /**
  * Branch.
