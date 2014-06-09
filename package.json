@@ -1,0 +1,14 @@
+{
+  "name": "grammarjs-smiles",
+  "version": "0.0.1",
+  "main": "./index.js",
+  "keywords": ["grammar", "chemistry", "smiles", "parser"],
+  "dependencies": {
+    "grammarjs-grammar": "*",
+    "grammarjs-token": "*",
+    "grammarjs-punctuation": "*"
+  },
+  "devDependencies": {
+    "grammarjs-recursive-parser": "*"
+  }
+}
